@@ -1,0 +1,17 @@
+{
+	"name": "Create local Sales table dedicated",
+	"properties": {
+		"content": {
+			"query": "CREATE TABLE Sales (\n\t[Prop_0] bigint,\n\t[Prop_1] nvarchar(200),\n\t[Prop_2] nvarchar(200),\n\t[Prop_3] nvarchar(200),\n\t[Prop_4] nvarchar(200),\n\t[Prop_5] nvarchar(200),\n\t[Prop_6] nvarchar(200),\n\t[Prop_7] nvarchar(200),\n\t[Prop_8] nvarchar(200),\n\t[Prop_9] nvarchar(200),\n\t[Prop_10] nvarchar(200),\n\t[Prop_11] nvarchar(200),\n\t[Prop_12] nvarchar(200),\n\t[Prop_13] nvarchar(200),\n\t[Prop_14] nvarchar(200),\n\t[Prop_15] nvarchar(200),\n\t[Prop_16] nvarchar(200),\n\t[Prop_17] nvarchar(200),\n\t[Prop_18] nvarchar(200),\n\t[ItemsOrdered] int\n\t)\n\n\nCOPY INTO dbo.Sales\nFROM 'https://u2unjstudentsa.dfs.core.windows.net/datalake/demolake/CURATED (Gold)/Sales'\nWITH  \n ( \n FILE_TYPE = 'PARQUET')\n\nSELECT TOP 100 * FROM dbo.Sales\nGO\n\nCREATE VIEW dbo.Sales2007 AS\nSELECT [Prop_0] AS [CustomerID], [ItemsOrdered]\nFROM dbo.Sales\nWHERE Year([Prop_1]) = 2007\n\nSELECT COUNT(*) FROM dbo.Sales2007\n\nSELECT Year([Prop_1]), COUNT(*)\nFROM dbo.Sales\nGROUP BY Year([Prop_1])\n\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "dedicated",
+				"poolName": "dedicated"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
