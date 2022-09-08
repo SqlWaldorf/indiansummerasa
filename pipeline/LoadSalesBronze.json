@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_q2j",
+				"name": "Copy_Sales",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
