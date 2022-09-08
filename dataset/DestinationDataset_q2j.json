@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"folderPath": "demolake/RAW (bronze)",
+				"folderPath": "demolake/RAW (bronze)/Sales/2022/09",
 				"fileSystem": "datalake"
 			},
 			"columnDelimiter": ",",
