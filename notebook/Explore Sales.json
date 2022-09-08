@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "62b91d51-99f7-4a70-865a-5843dabc18a6"
+				"spark.autotune.trackingId": "7cdb4bf2-3181-4f71-af8e-df71cb954dfb"
 			}
 		},
 		"metadata": {
@@ -49,11 +49,26 @@
 		},
 		"cells": [
 			{
+				"cell_type": "markdown",
+				"metadata": {
+					"nteract": {
+						"transient": {
+							"deleting": false
+						}
+					}
+				},
+				"source": [
+					"# A quick demo\r\n",
+					"\r\n",
+					"Welcome to this very brief spark demo"
+				]
+			},
+			{
 				"cell_type": "code",
 				"source": [
 					"1 + 1"
 				],
-				"execution_count": 2
+				"execution_count": 3
 			},
 			{
 				"cell_type": "code",
