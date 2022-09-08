@@ -1,0 +1,17 @@
+{
+	"name": "Create External Sales table Serverless",
+	"properties": {
+		"content": {
+			"query": "IF NOT EXISTS (SELECT * FROM sys.external_file_formats WHERE name = 'SynapseParquetFormat') \n\tCREATE EXTERNAL FILE FORMAT [SynapseParquetFormat] \n\tWITH ( FORMAT_TYPE = PARQUET)\nGO\n\nIF NOT EXISTS (SELECT * FROM sys.external_data_sources WHERE name = 'datalake_u2unjstudentsa_dfs_core_windows_net') \n\tCREATE EXTERNAL DATA SOURCE [datalake_u2unjstudentsa_dfs_core_windows_net] \n\tWITH (\n\t\tLOCATION = 'abfss://datalake@u2unjstudentsa.dfs.core.windows.net' \n\t)\nGO\n\nCREATE EXTERNAL TABLE Sales (\n\t[Prop_0] bigint,\n\t[Prop_1] nvarchar(200),\n\t[Prop_2] nvarchar(200),\n\t[Prop_3] nvarchar(200),\n\t[Prop_4] nvarchar(200),\n\t[Prop_5] nvarchar(200),\n\t[Prop_6] nvarchar(200),\n\t[Prop_7] nvarchar(200),\n\t[Prop_8] nvarchar(200),\n\t[Prop_9] nvarchar(200),\n\t[Prop_10] nvarchar(200),\n\t[Prop_11] nvarchar(200),\n\t[Prop_12] nvarchar(200),\n\t[Prop_13] nvarchar(200),\n\t[Prop_14] nvarchar(200),\n\t[Prop_15] nvarchar(200),\n\t[Prop_16] nvarchar(200),\n\t[Prop_17] nvarchar(200),\n\t[Prop_18] nvarchar(200),\n\t[ItemsOrdered] int\n\t)\n\tWITH (\n\tLOCATION = 'demolake/CURATED (Gold)/Sales/**',\n\tDATA_SOURCE = [datalake_u2unjstudentsa_dfs_core_windows_net],\n\tFILE_FORMAT = [SynapseParquetFormat]\n\t)\nGO\n\n\nSELECT TOP 100 * FROM dbo.Sales\nGO\n\nCREATE VIEW dbo.Sales2009 AS\nSELECT [Prop_0] AS [CustomerID], [ItemsOrdered]\nFROM dbo.Sales\nWHERE Year([Prop_1]) = 2009\n\nSELECT COUNT(*) FROM dbo.Sales2009\n\n\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "serverless",
+				"poolName": "Built-in"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
