@@ -17,7 +17,7 @@
 				"spark.dynamicAllocation.enabled": "false",
 				"spark.dynamicAllocation.minExecutors": "2",
 				"spark.dynamicAllocation.maxExecutors": "2",
-				"spark.autotune.trackingId": "78958446-85c0-4752-ba08-b917b8f5bc7f"
+				"spark.autotune.trackingId": "aa163b34-88d2-4cc0-8832-7aab9de43296"
 			}
 		},
 		"metadata": {
@@ -187,7 +187,8 @@
 					},
 					"microsoft": {
 						"language": "sparksql"
-					}
+					},
+					"collapsed": false
 				},
 				"source": [
 					"%%sql\r\n",
