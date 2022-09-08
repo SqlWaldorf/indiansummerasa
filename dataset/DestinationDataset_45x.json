@@ -1,0 +1,20 @@
+{
+	"name": "DestinationDataset_45x",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "u2udemois-WorkspaceDefaultStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "demolake/REFINED (Silver)/Sales/2022/09",
+				"fileSystem": "datalake"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
